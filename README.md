@@ -118,4 +118,31 @@ origin  https://github.com/codewithmosh/Mars.git (fetch)
 origin  https://github.com/codewithmosh/Mars.git (push)
 ```
 
+<<<<<<< Updated upstream
 A new line of code
+=======
+- if commits were made to the remote repository, you can use `git fetch` to update your local repository with the latest changes
+- so git is going to downlaod this new commit and then move origin/master forward.
+- even though we downloaded this new commit, our working directory is not updated.
+
+  - because currently master branch is "A" and origin/master is "B"
+  - to bring in those changes we must switch to the master branch type `git merge origin/master`
+
+- use `git branch -vv` this shows how our local and remote tracking branches are diverging
+
+### How do I stash my changes before merging?
+
+If you have uncommitted changes and want to temporarily save them before merging another branch, you can use `git stash`. This command stores your changes and reverts your working directory to the last commit.
+
+To stash your changes:
+
+```sh
+git stash
+```
+
+After merging, you can reapply your stashed changes with:
+
+```sh
+git stash pop
+```
+>>>>>>> Stashed changes
