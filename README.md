@@ -50,3 +50,14 @@
 4. Click **Create repository**.
 
 This setup gives your project a starting point and allows collaborators to immediately see project details.
+
+### Adding Collaborators to Your Repository
+
+1. Navigate to your repository on GitHub.
+2. Click on the **Settings** tab.
+3. In the sidebar, select **Collaborators** or **Manage access** (depending on your GitHub interface).
+4. Click **Add people** and enter the GitHub username or email address of the person you want to invite.
+5. Choose the appropriate permission level (e.g., read, write, admin).
+6. Click **Add** to send the invitation.
+
+The invited collaborator will receive an email notification and must accept the invitation before they can access the repository.
