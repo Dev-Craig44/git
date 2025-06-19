@@ -41,3 +41,12 @@
 - This is called the <strong>integration-manager workflow</strong> because maintainers are responsible for integrating contributions from others.
 
 </div>
+
+### Creating a New Repository on GitHub
+
+1. Go to your GitHub account and click the **New** button to create a repository.
+2. Fill in the repository name and description.
+3. Select the option **"Add a README file"**—this initializes the repository with a README and makes the first commit for you.
+4. Click **Create repository**.
+
+This setup gives your project a starting point and allows collaborators to immediately see project details.
