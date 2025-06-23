@@ -120,6 +120,8 @@ origin  https://github.com/codewithmosh/Mars.git (push)
 
 A new line of code
 
+Tey another line of code
+
 - if commits were made to the remote repository, you can use `git fetch` to update your local repository with the latest changes
 - so git is going to downlaod this new commit and then move origin/master forward.
 - even though we downloaded this new commit, our working directory is not updated.
