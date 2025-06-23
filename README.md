@@ -147,9 +147,22 @@ After merging, you can reapply your stashed changes with:
 git stash pop
 ```
 
-# Pulling
+### Pulling Changes from a Remote Repository
 
-- pull the changes in the remote repository into our local repository, most of the time, we have to do a fetch, followed by a merge
-- we have a command that combines these two, it's the `git pull` command
+To update your local repository with changes from the remote, you typically need to **fetch** the latest commits and then **merge** them into your local branch. The `git pull` command combines these two steps:
 
--
+```sh
+git pull
+```
+
+This command fetches new commits from the remote repository and merges them into your current branch.
+
+#### Using Rebase Instead of Merge
+
+Rebasing provides a cleaner project history by replaying your local commits on top of the fetched changes, rather than creating a merge commit. To pull with rebase, use:
+
+```sh
+git pull --rebase
+```
+
+This fetches the latest changes and applies your local commits on top, resulting in a linear commit history.
