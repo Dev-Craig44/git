@@ -146,3 +146,10 @@ After merging, you can reapply your stashed changes with:
 ```sh
 git stash pop
 ```
+
+# Pulling
+
+- pull the changes in the remote repository into our local repository, most of the time, we have to do a fetch, followed by a merge
+- we have a command that combines these two, it's the `git pull` command
+
+-
