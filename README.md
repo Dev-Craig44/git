@@ -478,3 +478,49 @@ Once you’re done with the feature branch, follow these steps to clean up both 
 ---
 
 By following these steps, multiple collaborators can efficiently work on a feature branch and keep their repositories tidy after the work is complete.
+
+# Pull Request
+
+- Quite often, as part of implementing a feature or fixing a bug, we would like other team members' feedback about our code. This is where we use a **pull request**.
+- With a pull request, we open a discussion with the team before merging a branch into `master` (or `main`).
+
+**Typical Pull Request Workflow:**
+
+1. Go to the **Pull Requests** tab on GitHub and click **New pull request**.
+2. Select the base branch (e.g., `master`) and the compare branch (e.g., your feature branch).
+3. Click **Create pull request** and provide a descriptive title, such as `Feature: Social Login`.
+4. Add a summary or description of the changes.
+
+**Code Review Process:**
+
+- A reviewer examines the pull request and may request changes. For example, they might comment:
+  > "Please capitalize the 'h' in the heading."
+- You (or Amy) make the requested changes in the feature branch, commit, and push them:
+  ```sh
+  git add .
+  git commit -m "Capitalize 'h' in heading"
+  git push
+  ```
+- The reviewer checks the updates and, if satisfied, approves the pull request.
+
+**Merging and Cleaning Up:**
+
+1. Once approved, merge the pull request on GitHub (choose **Squash and merge** or **Merge** as appropriate).
+2. After merging, you can choose to **delete the feature branch** on GitHub.
+
+**Syncing and Cleaning Up Locally (on Amy's workstation):**
+
+1. Pull the latest changes from the remote:
+   ```sh
+   git pull
+   ```
+2. Prune deleted remote branches:
+   ```sh
+   git fetch -p
+   ```
+3. Delete the local feature branch (after switching to another branch, e.g., `main`):
+   ```sh
+   git branch -d feature/social-login
+   ```
+
+This process ensures that the code is reviewed, merged, and both remote and local repositories are kept clean and up to date.
