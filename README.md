@@ -440,3 +440,41 @@ Suppose you and Amy are working together on a new feature. Here’s a step-by-st
 ---
 
 This workflow ensures smooth collaboration, minimizes conflicts, and keeps everyone in sync.
+
+### Cleaning Up After Finishing a Feature Branch
+
+Once you’re done with the feature branch, follow these steps to clean up both the remote and local references:
+
+1. **Delete the branch from the remote repository:**
+
+   ```sh
+   git push -d origin feature/change-password
+   ```
+
+   This removes the branch from the remote (`origin`).
+
+2. **Delete the local branch:**
+
+   First, check your local branches:
+
+   ```sh
+   git branch
+   ```
+
+   Then, delete the feature branch locally:
+
+   ```sh
+   git branch -d feature/change-password
+   ```
+
+3. **Remove remote-tracking branches that no longer exist on the remote:**
+
+   ```sh
+   git remote prune origin
+   ```
+
+   This cleans up any stale references to branches that have been deleted from the remote.
+
+---
+
+By following these steps, multiple collaborators can efficiently work on a feature branch and keep their repositories tidy after the work is complete.
