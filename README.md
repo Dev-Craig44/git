@@ -202,3 +202,39 @@ When you want to upload your local commits to the remote repository, you typical
    ```
 
 This workflow ensures you do not overwrite others' work and keeps the repository history safe and consistent.
+
+## Storing Credentials
+
+When pushing to a remote repository, you typically don't want to enter your username and password every time. Git provides credential helpers to securely store your credentials, either in memory or on disk.
+
+### Credential Helpers
+
+- **In-Memory Cache:**  
+   Store credentials in memory for a short period (default: 15 minutes).  
+   Set up with:
+
+  ```sh
+  git config --global credential.helper cache
+  ```
+
+- **macOS (Keychain):**  
+   Use the macOS Keychain to securely store credentials.
+
+  1.  Check if the helper is available:
+      ```sh
+      git credential-osxkeychain
+      ```
+  2.  Set up the helper:
+      ```sh
+      git config --global credential.helper osxkeychain
+      ```
+
+- **Windows (Credential Manager):**  
+   Use the Windows Credential Store to save credentials securely:
+  ```sh
+  git config --global credential.helper manager
+  ```
+
+These helpers store sensitive information like passwords and tokens in an encrypted format, keeping your data secure.
+
+> **Tip:** Always use a credential helper appropriate for your operating system to avoid repeatedly entering your credentials.
