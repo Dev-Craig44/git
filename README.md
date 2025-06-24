@@ -166,3 +166,39 @@ git pull --rebase
 ```
 
 This fetches the latest changes and applies your local commits on top, resulting in a linear commit history.
+
+## Pushing
+
+When you want to upload your local commits to the remote repository, you typically use `git push`. However, there are some important considerations:
+
+### Force Pushing (`git push -f`)
+
+- Using `git push -f` (force push) tells Git to overwrite the remote branch with your local branch, discarding any commits on the remote that are not in your local history.
+- For example, if the remote branch has commits `a ← b ← d` (where `d` is someone else's work), and your local branch has `a ← b ← c` (your work), force pushing will replace `d` with `c` on the remote.
+- **Warning:** You should **never** use force push unless absolutely necessary (e.g., you made a serious mistake), as it can erase other people's work.
+
+### The Correct Workflow
+
+1. **Pull First:**  
+   If the remote branch has new commits, always pull the latest changes before pushing.  
+   For example:
+
+   - Local: `a ← b ← c` (your branch)
+   - Remote: `a ← b ← d` (origin/master)
+
+   Run:
+
+   ```sh
+   git pull
+   ```
+
+2. **Merge or Rebase:**  
+   After pulling, you may need to merge or rebase to integrate the remote changes (`d`) with your local commits (`c`). If there are conflicts, resolve them.
+
+3. **Push Safely:**  
+   Once your local branch is up to date and conflicts are resolved, push your changes to the remote repository:
+   ```sh
+   git push
+   ```
+
+This workflow ensures you do not overwrite others' work and keeps the repository history safe and consistent.
