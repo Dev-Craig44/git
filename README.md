@@ -303,3 +303,62 @@ GitHub provides a **Releases** feature that works closely with tags to help you 
    Releases are a **GitHub feature**, not a core Git feature. They provide a convenient way to share packaged versions of your project with others.
 
 This makes it easy for users to download specific versions of your project, complete with documentation and compiled assets.
+
+# Sharing Branches
+
+By default, branches you create in your local repository are private and not visible to others. To collaborate on a branch with your team, you need to explicitly push it to the remote repository.
+
+## Pushing a New Branch
+
+If you create a new branch (e.g., `feature/change-password`) and try to run `git push`, you may see an error like:
+
+```
+fatal: The current branch feature/change-password has no upstream branch.
+```
+
+This means your branch is not yet linked to a branch on the remote (`origin`).
+
+To push your new branch and set the upstream (so future pushes are easier), use:
+
+```sh
+git push -u origin feature/change-password
+```
+
+- The `-u` flag sets up tracking between your local branch and the remote branch.
+
+## Viewing Branches
+
+- To see all local branches and their tracking status:
+  ```sh
+  git branch -vv
+  ```
+- To list all remote branches:
+  ```sh
+  git branch -r
+  ```
+
+## Deleting a Remote Branch
+
+When you're done with a branch and want to remove it from the remote repository, run:
+
+```sh
+git push -d origin feature/change-password
+```
+
+- This deletes the branch from the remote (`origin`).
+
+Note: After deleting the remote branch, it may still appear in the output of `git branch -r` until you fetch the latest updates:
+
+```sh
+git fetch -p
+```
+
+## Deleting a Local Branch
+
+To delete the branch from your local repository (after switching to another branch, such as `main` or `master`):
+
+```sh
+git branch -d feature/change-password
+```
+
+This cleans up your local branches and keeps your repository organized.
