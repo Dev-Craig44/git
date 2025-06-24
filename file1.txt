@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 hello
+=======
+password
+>>>>>>> feature/change-password
