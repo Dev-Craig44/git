@@ -282,3 +282,24 @@ You can fetch tags from the remote repository to your local repository. This is 
   ```
 
 > **Note:** Deleting a tag from the remote does **not** remove it from your local repository, and vice versa.
+
+## Releases
+
+GitHub provides a **Releases** feature that works closely with tags to help you manage and distribute your software.
+
+- **Create a Release:**  
+   Navigate to the **Tags** section of your repository, then click on the **Releases** tab. Here, you can create a new release to package your software.
+
+- **Attach Assets:**  
+   You can include source code, binary files, and detailed release notes with each release. Uploaded binaries will appear in the **Assets** section after publishing.
+
+- **Tagging:**  
+   When you create a release, GitHub automatically creates a tag for the latest commit (if one doesn't already exist).
+
+- **Pre-release Option:**  
+   If your release is not production-ready, you can mark it as a **pre-release** by selecting the corresponding checkbox.
+
+- **Note:**  
+   Releases are a **GitHub feature**, not a core Git feature. They provide a convenient way to share packaged versions of your project with others.
+
+This makes it easy for users to download specific versions of your project, complete with documentation and compiled assets.
