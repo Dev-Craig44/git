@@ -238,3 +238,47 @@ When pushing to a remote repository, you typically don't want to enter your user
 These helpers store sensitive information like passwords and tokens in an encrypted format, keeping your data secure.
 
 > **Tip:** Always use a credential helper appropriate for your operating system to avoid repeatedly entering your credentials.
+
+## Sharing Tags
+
+By default, the `git push` command does **not** push tags to the remote repository. Tags are useful for marking specific points in your project’s history (such as releases).
+
+### Creating and Pushing Tags
+
+1. **Create a tag:**  
+   To attach a tag (e.g., `v1.0`) to your latest commit, run:
+
+   ```sh
+   git tag v1.0
+   ```
+
+   This tag exists only in your local repository.
+
+2. **Share a tag:**  
+   To share the tag with others, push it to the remote repository:
+   ```sh
+   git push origin v1.0
+   ```
+
+### Downloading Tags
+
+You can fetch tags from the remote repository to your local repository. This is helpful for checking out specific releases or states of the project.
+
+### Deleting Tags
+
+- **Delete a tag from the remote:**  
+  If you accidentally pushed a tag and want to remove it from the remote:
+
+  ```sh
+  git push origin --delete v1.0
+  ```
+
+  This deletes the tag from the remote repository, but it still exists locally.
+
+- **Delete a tag locally:**  
+  To remove the tag from your local repository:
+  ```sh
+  git tag -d v1.0
+  ```
+
+> **Note:** Deleting a tag from the remote does **not** remove it from your local repository, and vice versa.
