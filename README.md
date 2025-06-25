@@ -592,3 +592,52 @@ Milestones are used to track progress toward specific goals or project phases. Y
 - Add multiple issues or pull requests to a milestone.
 - View milestone progress as a percentage of completed items.
 - Use milestones to organize releases, sprints, or major features.
+
+##### Contributing to Open-Source Projects
+
+To contribute to an open-source project, follow these steps:
+
+1. **Fork the Repository:**  
+   Create a copy of the original repository under your own GitHub account by clicking the **Fork** button.
+
+2. **Clone Your Fork:**  
+   Download your forked repository to your local machine:
+
+   ```sh
+   git clone https://github.com/your-username/vidly-mvc-5.git
+   ```
+
+3. **Create a Feature Branch:**  
+   Create a new branch for your changes (e.g., `bugfix`):
+
+   ```sh
+   git checkout -b bugfix
+   ```
+
+4. **Make Your Changes:**  
+   For example, add `hello` to the `README.md` file.
+
+5. **Commit and Push:**  
+   Commit your changes and push the branch to your fork:
+
+   ```sh
+   git add README.md
+   git commit -m "Add hello to README"
+   git push origin bugfix
+   ```
+
+6. **Open a Pull Request:**  
+   Go to the original repository on GitHub and click **New pull request**.  
+   You'll see a comparison like:
+
+   ```
+   base repo: mosh-hamedani/vidly-mvc-5  base: master
+   head repo: your-username/vidly-mvc-5  compare: bugfix
+   ```
+
+   This means you are proposing to merge your `bugfix` branch from your fork into the `master` branch of the original repository.
+
+7. **Collaborate and Update:**  
+   Discuss any requested changes with the maintainers, update your branch as needed, and once approved, your changes will be merged.
+
+> **Tip:** Always use descriptive branch names and commit messages to make your contributions clear and easy to review.
