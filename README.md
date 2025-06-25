@@ -584,3 +584,11 @@ Issue tracking goes hand-in-hand with pull requests and is a core part of collab
 - Labels help categorize issues and pull requests, making it easier to organize and filter work.
 - For example, if you assign the **enhancement** label to an issue, you'll see a count next to the label indicating how many open issues or pull requests are associated with it.
 - Clicking a label shows all issues and pull requests tagged with that label, allowing you to quickly view related work in one place.
+
+##### Milestones
+
+Milestones are used to track progress toward specific goals or project phases. You can group related issues and pull requests under a milestone to monitor how much work has been completed and what remains. This provides a clear overview of your team's progress and helps with planning and prioritization.
+
+- Add multiple issues or pull requests to a milestone.
+- View milestone progress as a percentage of completed items.
+- Use milestones to organize releases, sprints, or major features.
