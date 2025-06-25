@@ -524,3 +524,57 @@ By following these steps, multiple collaborators can efficiently work on a featu
    ```
 
 This process ensures that the code is reviewed, merged, and both remote and local repositories are kept clean and up to date.
+
+## Resolving Conflicts
+
+Suppose Amy, working on the `feature/logout` branch, adds the word "hello" to `file1`. Meanwhile, someone else makes conflicting changes to the same part of `file1` on the `main` branch.
+
+When Amy tries to open a pull request from `feature/logout` to `main`, GitHub detects that both branches have modified the same section of `file1` and displays a message:  
+**"This branch has conflicts that must be resolved."**
+
+This means the conflicting changes must be reviewed and fixed manually before the pull request can be merged.
+
+**Typical Conflict Resolution Workflow:**
+
+1. **Pull the Latest Changes:**  
+   The person responsible for merging (Amy or another team member) should first pull the latest changes from the `main` branch:
+
+   ```sh
+   git checkout feature/logout
+   git pull origin main
+   ```
+
+2. **Resolve Conflicts:**  
+   Git will pause and highlight the conflicting files. Open each file and look for conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`). Edit the file to keep the desired changes and remove the markers.
+
+3. **Mark as Resolved and Commit:**  
+   After resolving all conflicts, stage the changes and create a new commit:
+
+   ```sh
+   git add file1
+   git commit -m "Resolve merge conflict in file1"
+   ```
+
+4. **Push the Updated Branch:**  
+   Push the resolved branch to GitHub:
+
+   ```sh
+   git push
+   ```
+
+5. **Complete the Pull Request:**  
+   Once the conflicts are resolved and pushed, the pull request can be merged as usual.
+
+> **Tip:** Always communicate with your team when resolving conflicts to avoid overwriting important changes.
+
+### Issues
+
+Issue tracking goes hand-in-hand with pull requests and is a core part of collaborative development on GitHub.
+
+- Click on the **Issues** tab in your repository to track bugs, request new features, suggest enhancements, or discuss ideas with your team.
+- To create a new issue, click **New Issue** and provide a descriptive title (e.g., `Send email when someone signs up`).
+- You can attach files, screenshots, or other resources to help clarify the issue.
+- Assign issues to specific team members, or leave them unassigned so others can pick them up.
+- Issues can be linked to pull requests. When a pull request that references an issue is merged and closed, the issue will be automatically closed as well.
+
+> **Tip:** Use keywords like `Fixes #123` or `Closes #123` in your pull request description to automatically close the linked issue when the pull request is merged.
