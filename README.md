@@ -593,7 +593,7 @@ Milestones are used to track progress toward specific goals or project phases. Y
 - View milestone progress as a percentage of completed items.
 - Use milestones to organize releases, sprints, or major features.
 
-##### Contributing to Open-Source Projects
+#### Contributing to Open-Source Projects
 
 To contribute to an open-source project, follow these steps:
 
@@ -641,3 +641,67 @@ To contribute to an open-source project, follow these steps:
    Discuss any requested changes with the maintainers, update your branch as needed, and once approved, your changes will be merged.
 
 > **Tip:** Always use descriptive branch names and commit messages to make your contributions clear and easy to review.
+
+## Keeping a Forked Repository Up to Date
+
+When you fork a repository to contribute to it, your fork is **not** automatically connected to the original (base) repository. This means your fork can become out of sync if new commits are added to the base repository.
+
+To keep your fork up to date:
+
+1. **Check Your Remotes**
+
+   - List your current remotes:
+     ```sh
+     git remote
+     ```
+   - For more details (including URLs):
+     ```sh
+     git remote -v
+     ```
+
+   By default, you'll see `origin`, which points to your fork.
+
+2. **Add the Base Repository as a Remote**
+
+   - Add a new remote called `upstream` (or any name you prefer) pointing to the original repository:
+     ```sh
+     git remote add upstream https://github.com/<original-owner>/<repo>.git
+     ```
+   - If you want to rename this remote later:
+     ```sh
+     git remote rename upstream base
+     ```
+   - To remove a remote:
+     ```sh
+     git remote rm base
+     ```
+
+3. **Fetch Changes from the Base Repository**
+
+   - Bring in new commits from the base repository:
+     ```sh
+     git fetch upstream
+     ```
+   - This will fetch all branches from `upstream` (the base repo), but not merge them.
+
+4. **Merge Updates into Your Local Branch**
+
+   - To update your local `master` (or `main`) branch with changes from the base repository:
+     ```sh
+     git checkout master
+     git merge upstream/master
+     ```
+   - If you are working on a feature branch, it's a good practice to merge the updated `master` into your feature branch to minimize future conflicts:
+     ```sh
+     git checkout my-feature-branch
+     git merge master
+     ```
+
+5. **Push Updates to Your Fork**
+
+   - After merging, push the updated branch to your fork on GitHub:
+     ```sh
+     git push origin master
+     ```
+
+> **Tip:** Regularly syncing your fork with the base repository ensures you have the latest changes and reduces the risk of merge conflicts.
