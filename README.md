@@ -578,3 +578,9 @@ Issue tracking goes hand-in-hand with pull requests and is a core part of collab
 - Issues can be linked to pull requests. When a pull request that references an issue is merged and closed, the issue will be automatically closed as well.
 
 > **Tip:** Use keywords like `Fixes #123` or `Closes #123` in your pull request description to automatically close the linked issue when the pull request is merged.
+
+#### Labels
+
+- Labels help categorize issues and pull requests, making it easier to organize and filter work.
+- For example, if you assign the **enhancement** label to an issue, you'll see a count next to the label indicating how many open issues or pull requests are associated with it.
+- Clicking a label shows all issues and pull requests tagged with that label, allowing you to quickly view related work in one place.
